@@ -1,0 +1,46 @@
+footer {
+  background: #051A1D;
+  color: #FFF;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24rem;
+}
+
+.flexRowItem {
+  justify-content: flex-start;
+}
+
+.childFlexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.childFlexRowItem {
+  justify-content: flex-start;
+}
+
+.childFlexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.childFlexColumnItem {
+  align-self: center;
+}
+
+.navNo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.navNo {
+  width: 4rem;
+  height: 2rem;
+}
