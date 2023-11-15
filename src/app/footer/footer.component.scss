@@ -1,6 +1,7 @@
 footer {
   background: #051A1D;
   color: #FFF;
+  height: 391px;
 }
 
 .flexRow {
@@ -8,6 +9,7 @@ footer {
   flex-direction: row;
   align-items: center;
   gap: 24rem;
+  padding: 7.6rem;
 }
 
 .flexRowItem {
@@ -37,10 +39,9 @@ footer {
 
 .navNo {
   width: 4rem;
-  height: 4rem;
+  height: 3.8rem;
 }
 
-.navNo {
-  width: 4rem;
-  height: 2rem;
+.textCenter {
+  text-align: center;
 }
