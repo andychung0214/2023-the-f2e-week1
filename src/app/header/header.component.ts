@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  showNavMenu: boolean = false;
+  showNavMenu: boolean = true;
 
   constructor(public sharedService:SharedService){}
 
