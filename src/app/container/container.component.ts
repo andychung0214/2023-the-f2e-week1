@@ -1,5 +1,7 @@
+import { CustomDialogService } from '../../services/custom-dialog.service';
+import { CustomDialogComponent } from './../material-ui/custom-dialog/custom-dialog.component';
 import { SharedService } from './../../services/shared.service';
-import { Component } from '@angular/core';
+import { Component, ElementRef,ViewChild } from '@angular/core';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -18,7 +20,10 @@ export class ContainerComponent {
 
   scrollName: any;
 
-  constructor(public sharedService:SharedService){}
+  // @ViewChild('bottomPart') bottomPart: ElementRef;
+
+  constructor(public sharedService:SharedService,
+    private customDialogService:CustomDialogService){}
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
@@ -63,5 +68,18 @@ export class ContainerComponent {
     // this.isDisplayMain = false;
 
     this.sharedService.displayDonate(true);
+    setTimeout(() => this.scrollToBottomPart(), 0);
   }
+
+  openDialog(desc: string){
+    this.customDialogService.openDialog(desc);
+  }
+
+  scrollToBottomPart() {
+    const element = document.getElementById('container');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }

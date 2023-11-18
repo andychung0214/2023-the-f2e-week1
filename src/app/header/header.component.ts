@@ -7,9 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private sharedService:SharedService){}
+  showNavMenu: boolean = false;
+
+  constructor(public sharedService:SharedService){}
 
   scrollToElement(elementId: string): void {
+
+    this.sharedService.isDisplayMain = true;
+    this.sharedService.isDisplayDonate = false;
     const element = document.getElementById(elementId);
 
     if (element) {
@@ -19,9 +24,16 @@ export class HeaderComponent {
       //   this.sharedService.displayMain(true);
       // }
 
-      this.sharedService.isDisplayMain = true;
-      this.sharedService.isDisplayDonate = false;
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  toggleNavMenu() {
+    this.showNavMenu = !this.showNavMenu;
+  }
+
+  closeCancel() {
+    this.showNavMenu = false;
+  }
+
 }

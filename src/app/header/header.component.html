@@ -1,10 +1,13 @@
 <header class='flexRow'>
   <div class='flexRowItem'>
+    <a  href="/">
     <img class='navNo' src='assets/images/Group 19.png' />
     <img class='navName' src='assets/images/name.png' />
-
+</a>
   </div>
-  <div class='flexRowItem childFlexRow'>
+
+  <img class="cancel" src='assets/images/cancel.svg' *ngIf="showNavMenu" (click)="closeCancel()"/>
+  <div class='flexRowItem childFlexRow' *ngIf="showNavMenu">
     <div class='childFlexRowItem' (click)="scrollToElement('assertion')">喵主張</div>
     <div class='childFlexRowItem' (click)="scrollToElement('latestEvent')">
       最新活動
@@ -18,5 +21,8 @@
     <div class='childFlexRowItem' (click)="scrollToElement('feedback')">
       民眾服務
     </div>
+
   </div>
+  <img class='flexRowItem navMobileMenu' src='assets/images/menu.svg' (click)="toggleNavMenu()" />
+
 </header>
