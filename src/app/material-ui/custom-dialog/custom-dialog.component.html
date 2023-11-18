@@ -1,0 +1,38 @@
+<div class="popup">
+  <div class="popup-background"></div>
+
+<div class="popup-body">
+  <img class="cancel" (click)="closeDialog()" src="assets/images/cancel.svg" alt="">
+  <p class="title" mat-dialof-title>選擇付款方式</p>
+  <div class="donate_money">
+    <p>贊助金額</p>
+    <p>NT$<span>{{sponsorMoney}}</span></p>
+  </div>
+  <div class="spaceH0_5"></div>
+  <hr>
+  <div class="payway_items">
+  <div class="item" [class.active]="selectedPayway === '信用卡支付'" (click)="selectPayway('信用卡支付')">
+    <p>信用卡支付</p>
+    <img *ngIf="selectedPayway === '信用卡支付'" src="assets/images/tick.svg">
+  </div>
+  <div class="item" [class.active]="selectedPayway === '超商代碼'" (click)="selectPayway('超商代碼')">
+    <p>超商代碼</p>
+    <img *ngIf="selectedPayway === '超商代碼'" src="assets/images/tick.svg">
+  </div>
+  <div class="item" [class.active]="selectedPayway === 'ATM 虛擬轉帳'" (click)="selectPayway('ATM 虛擬轉帳')">
+    <p>ATM 虛擬轉帳</p>
+    <img *ngIf="selectedPayway === 'ATM 虛擬轉帳'" src="assets/images/tick.svg">
+  </div>
+</div>
+
+  <button (click)="openDialog('檔案超 過10MB，請重新選擇')">下一步</button>
+
+  <!-- <div mat-dialog-content>
+    {{data.content}}
+  </div>
+  <div mat-dialog-content>
+    <button mat-raised-button (click)="closeDialog()" color="warn">OK</button>
+  </div> -->
+</div>
+  </div>
+

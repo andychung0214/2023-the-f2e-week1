@@ -7,6 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { ContainerComponent } from './container/container.component';
 import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout/layout.component';
+import { CustomDialogComponent } from './material-ui/custom-dialog/custom-dialog.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { FinalDialogComponent } from './material-ui/final-dialog/final-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -14,10 +19,13 @@ import { LayoutComponent } from './layout/layout.component';
     HeaderComponent,
     ContainerComponent,
     FooterComponent,
-    LayoutComponent
+    LayoutComponent,
+    CustomDialogComponent,
+    FinalDialogComponent
   ],
   imports: [
     BrowserModule,
+    MatDialogModule,
     AppRoutingModule
   ],
   providers: [],
