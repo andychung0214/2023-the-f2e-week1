@@ -10,6 +10,8 @@
     left: 0; /* 與左邊界對齊 */
     width: 100%; /* 寬度為100% */
     z-index: 100; /* 確保 header 在其他內容之上 */
+
+    background: #FFF;
 }
 
 .flexRowItem {
