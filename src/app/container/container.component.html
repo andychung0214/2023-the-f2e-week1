@@ -1,4 +1,6 @@
-<div class="banner">
+<div *ngIf="sharedService.isDisplayMain">
+
+<div id="banner" class="banner">
   <div class="fade-right">
     <img class="bannerTitle1" src="../../assets/images/banner_title01.svg" alt="">
     <img class="bannerTitle2" src="../../assets/images/banner_title02.svg" alt="">
@@ -6,7 +8,17 @@
   <img class="subtitle" src="../../assets/images/banner_subtitle.svg">
   <img class="man" src="../../assets/images/man.svg" alt="">
   <div class="policy_box">
-    <p>
+    <p class="policy">
+      打造休閒天堂！
+      <br>
+      推廣寵物休閒與娛樂場所
+    </p>
+    <button>
+      <img src="../../assets/images/arrow.svg" alt="">
+    </button>
+  </div>
+  <div class="policy_box">
+    <p class="policy">
       讓愛更加專業！
       <br>
       推廣寵物飼養教育
@@ -16,27 +28,17 @@
     </button>
   </div>
   <div class="policy_box">
-    <p>
-      讓愛更加專業！
+    <p class="policy">
+      為毛孩子謀福利！
       <br>
-      推廣寵物飼養教育
-    </p>
-    <button>
-      <img src="../../assets/images/arrow.svg" alt="">
-    </button>
-  </div>
-  <div class="policy_box">
-    <p>
-      讓愛更加專業！
-      <br>
-      推廣寵物飼養教育
+      推動寵物醫療保障方案
     </p>
     <button>
       <img src="../../assets/images/arrow.svg" alt="">
     </button>
   </div>
 </div>
-<div class="assertion">
+<div id="assertion" class="assertion">
   <div class="wave above_wave_shadow"></div>
   <div class="wave above_wave advocate--js"></div>
   <div class="box">
@@ -49,7 +51,7 @@
   </div>
   <div class="wave under_wave"></div>
 </div>
-<div class="latestEvent">
+<div id="latestEvent" class="latestEvent">
   <button class="more_event">
     <p>更多活動</p>
     <img src="../../assets/images/arrow.svg" alt="">
@@ -64,7 +66,7 @@
     <div data-aos="flip-down" class="event aos-init"><div class="line"></div> <img src="assets/images/event03.jpeg"> <div class="content_box"><p class="date">2023.12.20</p> <p class="title">收容所模特兒大比拼！</p> <p class="content">今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！ </p></div></div>
   </div>
 </div>
-<div class="policyIssues">
+<div id="policyIssues" class="policyIssues">
   <p>
     政策議題
   </p>
@@ -147,19 +149,19 @@
     </div>
   </div>
 </div>
-<div class="donateNow">
+<div id="donateNow" class="donateNow">
   <p>您的小筆捐款，是每隻毛孩未來的大大動力！</p>
-  <img src="../../assets/images/feed.svg" alt="">
+  <img class="feed" src="../../assets/images/feed.svg" alt="">
   <div class="box zoom-in">
     <p>目前小額捐款贊助總金額</p>
     <p>79,851,618</p>
     <div>
       <img src="../../assets/images/money.svg" alt="">
-      <span>前往捐款</span>
+      <span (click)="clickToDonate()">前往捐款</span>
     </div>
   </div>
 </div>
-<div class="feedback">
+<div id="feedback" class="feedback">
   <div class="fade-down title">您的聲音，我們的行動！</div>
   <br>
   <div class="fade-down content">親愛的鄉親，每一位市民的意見都是我們社區前進的原動力。無論大小事，我都誠摯希望聽到您的建議。分享您的想法，一同為我們的未來打造更美好！</div>
@@ -183,3 +185,8 @@
   </div>
 
 </div>
+</div>
+
+<section class="donate_page donate_page--js" *ngIf="sharedService.isDisplayDonate"><section class="section01 section01--js"><p>您的小筆捐款，是每隻毛孩未來的大大動力！</p> <img src="assets/images/feed.svg"> <div class="box"><p>目前小額捐款贊助總金額</p> <p>79,851,718</p></div></section> <section class="section02"><div class="wave above_wave_shadow section02--js"></div> <div class="wave above_wave section02--js"></div> <div class="box"><div class="spaceH2"></div> <div class="donate_items"><div class="item"><img src="assets/images/can/can01.svg"> <p class="item_name">喵星人之友</p> <div class="spaceH1"></div> <p class="item_money">NT$<span>600</span></p> <div class="spaceH1"></div> <p class="item_sponsor">已有 <span>9957</span> 人贊助</p></div> <div class="item active"><img src="assets/images//can/can02.svg"> <p class="item_name">喵星大使</p> <div class="spaceH1"></div> <p class="item_money">NT$<span>6,000</span></p> <div class="spaceH1"></div> <p class="item_sponsor">已有 <span>2000</span> 人贊助</p></div> <div class="item"><img src="assets/images/can/can03.svg"> <p class="item_name">喵星傳奇</p> <div class="spaceH1"></div> <p class="item_money">NT$<span>60,000</span></p> <div class="spaceH1"></div> <p class="item_sponsor">已有 <span>999</span> 人贊助</p></div></div> <div class="form"><label class="form_input"><input placeholder="自訂贊助金額" type="text"> <p class="error">請輸入捐贈金額</p></label> <button class="btn"><img src="assets/images/money.svg">
+                                立即捐款
+                            </button></div> <div class="precautions"><p>捐贈者應注意事項</p> <ul><li>捐款人必須為本國國民且具有選舉權。</li> <li>請註明捐款人姓名、身分證字號、電話，以及收件人地址，以便寄發收據。</li> <li>任何人不得以本人以外之名義捐贈。</li> <li>匿名捐贈不得超過新台幣 1 萬元。</li> <li>個人對同一擬參選人每年捐贈總額不得超過新台幣 10 萬元；對不同擬參選人每年捐贈總額合計不得超過新台幣 30 萬元。</li> <li>營利事業對同一擬參選人每年捐贈總額不得超過新台幣 100 萬元；對不同擬參選人每年捐贈總額合計不得超過新台幣 200 萬元。</li> <li>個人於申報所得稅時，捐款金額可作為列舉扣除額；每申報戶最高為綜合所得額 20%，且上限為新台幣 20 萬元。</li> <li>營利事業於申報所得稅時，捐款金額可作為當年度費用或損失，不適用所得稅法第三十六條規定；其可減除金額不得超過所得額 10%，其總額並不得超過新台幣 50 萬元。</li> <li>其他規定請參閱政治獻金法或監察院網站。</li></ul></div></div></section></section>

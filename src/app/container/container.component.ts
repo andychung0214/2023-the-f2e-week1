@@ -1,3 +1,4 @@
+import { SharedService } from './../../services/shared.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent {
+  isDisplayMain = true;
+  isDisplayDonate!:boolean;
 
+  constructor(public sharedService:SharedService){}
+
+  clickToDonate(){
+    // this.isDisplayDonate = true;
+    // this.isDisplayMain = false;
+
+    this.sharedService.displayDonate(true);
+  }
 }

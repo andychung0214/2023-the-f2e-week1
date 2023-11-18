@@ -5,10 +5,18 @@
 
   </div>
   <div class='flexRowItem childFlexRow'>
-    <div class='childFlexRowItem'>喵主張</div>
-    <div class='childFlexRowItem'>最新活動</div>
-    <div class='childFlexRowItem'>政策議題</div>
-    <div class='childFlexRowItem'>小額捐款</div>
-    <div class='childFlexRowItem'>民眾服務</div>
+    <div class='childFlexRowItem' (click)="scrollToElement('assertion')">喵主張</div>
+    <div class='childFlexRowItem' (click)="scrollToElement('latestEvent')">
+      最新活動
+    </div>
+    <div class='childFlexRowItem' (click)="scrollToElement('policyIssues')">
+      政策議題
+    </div>
+    <div class='childFlexRowItem' (click)="scrollToElement('donateNow')">
+      小額捐款
+    </div>
+    <div class='childFlexRowItem' (click)="scrollToElement('feedback')">
+      民眾服務
+    </div>
   </div>
 </header>
