@@ -57,3 +57,21 @@ footer {
 .textCenter {
   text-align: center;
 }
+
+@media (max-width: 393px) {
+
+  .flexRow {
+    margin-bottom: 50px;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .flexRow .flexRowItem:first-child {
+    margin-left: -52%;
+  }
+
+}

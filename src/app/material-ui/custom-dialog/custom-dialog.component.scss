@@ -122,3 +122,57 @@
   align-items: center;
   margin-bottom: 100px;
 }
+
+
+@media (max-width: 393px){
+  .popup.popup-payment_method .popup-body {
+    width: 95%;
+}
+
+.popup .popup-body .cancel {
+  right: 10px;
+  top: 20px;
+}
+.popup.popup-payment_method .popup-body .title {
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.popup.popup-payment_method .popup-body .donate_money p:first-child {
+  top: -6px;
+}
+
+.popup.popup-payment_method .popup-body .donate_money p {
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+
+.popup.popup-payment_method .popup-body .donate_money p span {
+  font-size: 50px;
+}
+
+
+.popup.popup-payment_method .popup-body .payway_items .item.active {
+  border: 2px solid #6F7B20;
+}
+
+
+.popup.popup-payment_method .popup-body .payway_items .item.active img {
+  display: block;
+}
+
+.popup.popup-payment_method .popup-body .payway_items .item {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.popup .popup-body button {
+  width: 100%;
+  height: 50px;
+}
+
+
+}

@@ -81,3 +81,55 @@
   border-radius: 6px;
   cursor: pointer;
 }
+
+
+
+@media (max-width: 393px){
+
+  .popup.popup-sponsor_success .popup-body {
+    width: 95%;
+}
+
+.popup.popup-sponsor_success .popup-body .title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+
+.popup.popup-sponsor_success .popup-body .content {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+
+
+.popup.popup-sponsor_success .popup-body .donate_money {
+  padding: 0;
+  display: flex;
+}
+
+
+
+.popup.popup-sponsor_success .popup-body .donate_money p:first-child {
+  top: -6px;
+}
+
+
+.popup.popup-sponsor_success .popup-body .donate_money p {
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+}
+
+.popup.popup-sponsor_success .popup-body .donate_money p span {
+  font-size: 50px;
+}
+
+.popup.popup-sponsor_success .popup-body button {
+  width: 100%;
+}
+
+
+
+
+}

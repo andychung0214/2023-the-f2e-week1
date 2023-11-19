@@ -1,28 +1,21 @@
 <header class='flexRow'>
+
   <div class='flexRowItem'>
-    <a  href="/layout">
-    <img class='navNo' src='assets/images/Group 19.png' />
-    <img class='navName' src='assets/images/name.png' />
-</a>
+    <a href="/2023-the-f2e-week1/layout">
+      <img class='navNo' src='assets/images/Group 19.png' />
+      <img class='navName' src='assets/images/name.png' />
+    </a>
   </div>
 
-  <img class="cancel" src='assets/images/cancel.svg' *ngIf="showNavMenu" (click)="closeCancel()"/>
-  <div class='flexRowItem childFlexRow' *ngIf="showNavMenu">
+  <img class='navMobileMenu' src='assets/images/menu.svg' (click)="toggleNavMenu()" [class.hidden]="showNavMenu" />
+  <img class="cancel" src='assets/images/cancel.svg' [class.hidden]="showNavMenu" (click)="closeNavMenu()" />
+
+  <div class='navMenu flexRowItem childFlexRow' [class.hidden]="!showNavMenu">
     <div class='childFlexRowItem' (click)="scrollToElement('assertion')">喵主張</div>
-    <div class='childFlexRowItem' (click)="scrollToElement('latestEvent')">
-      最新活動
-    </div>
-    <div class='childFlexRowItem' (click)="scrollToElement('policyIssues')">
-      政策議題
-    </div>
-    <div class='childFlexRowItem' (click)="scrollToElement('donateNow')">
-      小額捐款
-    </div>
-    <div class='childFlexRowItem' (click)="scrollToElement('feedback')">
-      民眾服務
-    </div>
-
+    <div class='childFlexRowItem' (click)="scrollToElement('latestEvent')">最新活動</div>
+    <div class='childFlexRowItem' (click)="scrollToElement('policyIssues')">政策議題</div>
+    <div class='childFlexRowItem' (click)="scrollToElement('donateNow')">小額捐款</div>
+    <div class='childFlexRowItem' (click)="scrollToElement('feedback')">民眾服務</div>
   </div>
-  <img class='flexRowItem navMobileMenu'  src='assets/images/menu.svg' (click)="toggleNavMenu()" />
 
 </header>

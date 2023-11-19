@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  showNavMenu: boolean = true;
+  showNavMenu: boolean = false;
 
   constructor(public sharedService:SharedService){}
 
@@ -32,7 +32,7 @@ export class HeaderComponent {
     this.showNavMenu = !this.showNavMenu;
   }
 
-  closeCancel() {
+  closeNavMenu() {
     this.showNavMenu = false;
   }
 

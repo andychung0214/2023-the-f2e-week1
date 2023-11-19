@@ -19,7 +19,14 @@ export class ContainerComponent {
   public screenHeight: any;
 
   scrollName: any;
-
+  loadingOpts: any;
+  isDisplay = false;
+  menu: any;
+  menuClose: any;
+  sideBar: any;
+  mousemoveTimeline: any;
+  scrollCover: any;
+  scrollFace: any;
   // @ViewChild('bottomPart') bottomPart: ElementRef;
 
   constructor(public sharedService:SharedService,
@@ -30,38 +37,73 @@ export class ContainerComponent {
     this.screenHeight = window.innerHeight;
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+
+
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.card', {
-      rotationY: 180,
-      duration: 1,
-      scrollTrigger: {
-        trigger: '.card',
-        start: 'top center',
-        toggleActions: 'play none none none'
-      }
-    });
+    // this.scrollCover = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".card", // 決定scrolltrigger要以哪一個元素作為觸發基準點
+    //     markers: false, // 開啟start & end標記點，單純方便瀏覽動畫開始與結束點
+    //     pin: true,
+    //     scrub: true, //重要！開啟scrub來決定動畫播放是否依賴視窗滾動
+    //   },
+    // });
+    // this.scrollFace = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".fade-in", // 決定scrolltrigger要以哪一個元素作為觸發基準點
+    //     markers: false, // 開啟start & end標記點，單純方便瀏覽動畫開始與結束點
+    //     pin: true,
+    //     scrub: true, //重要！開啟scrub來決定動畫播放是否依賴視窗滾動
+    //   },
+    // });
 
-    gsap.from('.fade-in', {
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: '.fade-in',
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-      }
-    });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.container',
-        start: 'top center',
-        toggleActions: 'play none none none'
-      }
-    });
+    // gsap.to('.card', {
+    //   rotationY: 180,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: '.card',
+    //     start: 'top center',
+    //     toggleActions: 'play none none none'
+    //   }
+    // });
 
-    tl.to('.card', { rotationY: 180, duration: 1 })
-      .from('.fade-in', { opacity: 0, duration: 1 }, '-=0.5');
+    // gsap.from('.fade-in', {
+    //   opacity: 0,
+    //   duration: 1,
+    //   scrollTrigger: {
+    //     trigger: '.fade-in',
+    //     start: 'top 80%',
+    //     toggleActions: 'play none none none'
+    //   }
+    // });
+
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: 'top center',
+    //     toggleActions: 'play none none none'
+    //   }
+    // });
+
+    // tl.to('.card', { rotationY: 180, duration: 1 })
+    //   .from('.fade-in', { opacity: 0, duration: 1 }, '-=0.5');
+
+
+    //   this.mousemoveTimeline.to(".mousemove", { y: 15, duration: 1 })
+    // this.mousemoveTimeline.to(".mousemove", { y: 0, duration: 1 });
+
+    // this.scrollCover.to(".cover-top", { yPercent: -30 })
+    // this.scrollCover.to(".pic-face", { yPercent: -70 })
+    // this.scrollCover.to(".cover-mouse", { autoAlpha: 0, ease: "expo" }, "<")
+    // this.scrollCover.to(".cover-right", { yPercent: 100 }, "<")
+    // this.scrollCover.to(".cover-left", { yPercent: 10 }, "<")
+    // this.scrollCover.to(".cover-top", { yPercent: -100 }, "<")
+    // this.scrollCover.to(".cover-left", { yPercent: 100 })
+    // this.scrollCover.to(".fade-in", { yPercent: -110 }, "<")
+    // this.scrollCover.to(".pic-task", { opacity: 1, ease: "expo" })
+    // this.scrollCover.to(".mouse", { opacity: 1, ease: "expo" }, "<");
   }
   clickToDonate(){
     // this.isDisplayDonate = true;
